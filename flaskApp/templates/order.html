@@ -1,0 +1,28 @@
+<html>
+<head>
+<title>WebStandard example</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script language="javascript" type="text/javascript" src="https://stdpay.inicis.com/stdjs/INIStdPay.js" charset="UTF-8"></script>
+</head>
+ <body>
+   <form id="SendPayForm_id" name="" method="POST" >
+        <input type="text"    name="goodname" value="테스트" >
+        <input type="text"    name="buyername" value="홍길동" >
+        <input type="text"    name="buyertel" value="010-1234-5678" >
+        <input type="text"    name="buyeremail" value="test@inicis.com" >
+        <input type="text"    name="price" value="1000" >
+        <input type="hidden"  name="mid" value="INIpayTest" >
+        <input type="hidden"  name="gopaymethod" value="Card" >
+        <input type="hidden"  name="mKey" value="{{params.mKey}}" >
+        <input type="hidden"  name="signature" value="{{params.sign}}" >
+        <input type="hidden"  name="oid" value="{{params.oid}}" >
+        <input type="hidden"  name="timestamp" value="{{params.timestamp}}" >
+        <input type="hidden"  name="version" value="1.0" >
+        <input type="hidden"  name="currency" value="WON" >
+        <input type="hidden"  name="acceptmethod" value="below1000" >
+        <input type="hidden"  name="returnUrl" value="http://localhost:5000/success" >
+        <input type="hidden"  name="closeUrl" value="http://localhost:5000/close" >
+   </form>
+      <button onclick="INIStdPay.pay('SendPayForm_id')" style="padding:10px; margin-left:10%">결제요청</button>
+ </body>
+</html>
